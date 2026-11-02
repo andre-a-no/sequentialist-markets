@@ -1,0 +1,20 @@
+# sequentialist-markets
+
+> Planned application package for sequential market/risk workflows and strategy deterioration. Documentation only: no implementation, package release, trading strategy or performance result exists in this repository yet.
+
+## Current documentation
+
+- [Repository status](https://github.com/andre-a-no/sequentialist-markets/blob/main/README.md): intended ecosystem placement and absent implementation.
+- [Planning overview and FAQ](https://github.com/andre-a-no/sequentialist-markets/blob/main/docs/overview.md): possible tasks, required future inputs/outputs, open choices and limits.
+- [Обзор планов на русском](https://github.com/andre-a-no/sequentialist-markets/blob/main/docs/overview.ru.md): возможные задачи, будущие входные данные и результаты, открытые вопросы и ограничения.
+- [Development guidance](https://github.com/andre-a-no/sequentialist-markets/blob/main/AGENTS.md): documentation boundaries and truthful status reporting.
+
+## Related ecosystem foundations
+
+- [sequential-analysis](https://github.com/andre-a-no/sequential-analysis): statistical procedures.
+- [sequential-search](https://github.com/andre-a-no/sequential-search): generic search algorithms and contracts.
+- [sequential-games](https://github.com/andre-a-no/sequential-games): stochastic interaction models.
+- [sequentialist-core](https://github.com/andre-a-no/sequentialist-core): application execution, storage and audit.
+- [sequentialist-visuals](https://github.com/andre-a-no/sequentialist-visuals): reusable engineering views.
+
+Links describe planned repository documentation after publication. This index does not imply an available package, financial recommendation, regulatory approval, or guaranteed ingestion by an assistant or search engine.

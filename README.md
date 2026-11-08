@@ -8,11 +8,52 @@ There is no implementation, installable package, public API, benchmark or
 validated trading strategy here. The proposed Python import name
 `sequentialist.markets` describes intended placement, not an available module.
 
-The target architecture separates mathematical methods (`sequential-analysis`,
-`sequential-search`, `sequential-games`) from software engineering
-(`sequentialist-core`, `sequentialist-visuals`) and subject applications such as
-this one. Future market-specific states, constraints, costs and workflows
-belong here; common algorithms belong in their methodological libraries.
+## Conceptual framework: the Sequentialist ecosystem
+
+The ecosystem studies sequential decisions: observations arrive, evidence
+changes, and a policy chooses whether to continue, act, wait or stop. It separates
+three questions within the mathematical and cybernetic methods layer:
+
+| Library | Central question | Responsibility |
+|---|---|---|
+| [sequential-analysis](https://github.com/andre-a-no/sequential-analysis) | What can we infer from the observations available so far? | Statistical tests, estimation, filtering, prediction and procedure-specific uncertainty guarantees. |
+| [sequential-search](https://github.com/andre-a-no/sequential-search) | Which step should we explore next to reach an answer or a goal? | Search and reasoning over alternatives, experiments and rules, with explicit evidence, provenance and resource costs. |
+| [sequential-games](https://github.com/andre-a-no/sequential-games) | How do participants pursue their own goals while their actions change a shared environment? | Interaction models for cooperation, competition and partially aligned interests, including asynchronous actions, local information and deliberate waiting. |
+
+These are complementary responsibilities. A participant's policy can use search
+to plan and statistical analysis to interpret observations; other participants
+continue to act according to their own objectives. This describes how the
+methods can be composed. Each package's implementation status is stated
+separately below.
+
+The naming convention expresses a further separation into three layers:
+
+| Layer | Packages | Responsibility |
+|---|---|---|
+| Mathematical and cybernetic methods | `sequential-*`: analysis, search, games | Models, algorithms, explicit state and the assumptions under which a result holds. |
+| Reusable engineering platform | `sequentialist-*`, including [core](https://github.com/andre-a-no/sequentialist-core) and [visuals](https://github.com/andre-a-no/sequentialist-visuals) | Durable application execution, storage, recovery, audit and presentation, according to each package's implemented scope. |
+| Domain applications | `sequentialist-*`, including [ab](https://github.com/andre-a-no/sequentialist-ab), [quality](https://github.com/andre-a-no/sequentialist-quality), [monitor](https://github.com/andre-a-no/sequentialist-monitor), [clinical](https://github.com/andre-a-no/sequentialist-clinical) and [agentic](https://github.com/andre-a-no/sequentialist-agentic) | Subject-specific goals, workflows, adapters and user-facing decisions built from the methods and engineering components they need. |
+
+Both the engineering platform and applications use the `sequentialist-*`
+prefix. The platform is an open family of reusable packages; `core` currently
+provides durable tasks built around `sequential-analysis` runs. This organization
+does not imply that every combination already has an integration.
+
+Across the ecosystem, state, information available to a decision, randomness,
+costs and stopping reasons should be explicit. Evidence, resource expenditure
+and real-world effects have separate meanings. Statistical validity, derivability
+under supplied rules, properties of an interaction model and reliable execution
+each require their own justification; a guarantee in one layer does not
+automatically establish a guarantee in another.
+
+### This package's role
+
+**Layer: proposed domain application; planning only.** Markets is intended for
+market/risk workflows and strategy deterioration. Market-specific states, costs,
+constraints and decisions would belong here; inference, search and interaction
+algorithms would remain in `sequential-*`. Durable execution and presentation
+would reuse engineering packages through explicit integrations. There is no
+implemented trading system, API or performance guarantee.
 
 Start with the [plain-language overview and planning FAQ](docs/overview.md).
 The same overview is available [in Russian](docs/overview.ru.md).
